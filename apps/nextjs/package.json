@@ -29,7 +29,6 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@tanstack/react-query-devtools": "^5.59.15",
     "@test/eslint-config": "workspace:*",
     "@test/prettier-config": "workspace:*",
     "@test/tailwind-config": "workspace:*",

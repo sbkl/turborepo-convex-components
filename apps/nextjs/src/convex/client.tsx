@@ -1,12 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { useAuth } from "@clerk/clerk-react";
 import { ConvexQueryClient } from "@convex-dev/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ConvexReactClient } from "convex/react";
-import { ConvexProviderWithClerk } from "convex/react-clerk";
 
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
@@ -27,11 +25,6 @@ export default function ConvexClientProvider({
   children: React.ReactNode;
 }) {
   return (
-    <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-      <QueryClientProvider client={queryClient}>
-        {children}
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-      </QueryClientProvider>
-    </ConvexProviderWithClerk>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 }

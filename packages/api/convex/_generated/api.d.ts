@@ -8,14 +8,15 @@
  * @module
  */
 
-import type * as assessmentQuestions_aggregate from "../assessmentQuestions/aggregate.js";
-import type * as assessmentQuestions_query from "../assessmentQuestions/query.js";
-
 import type {
   ApiFromModules,
   FilterApi,
   FunctionReference,
 } from "convex/server";
+
+import type * as assessmentQuestions_aggregate from "../questions/aggregate.js";
+import type * as assessmentQuestions_query from "../questions/query.js";
+
 /**
  * A utility for referencing Convex functions in your app's API.
  *
