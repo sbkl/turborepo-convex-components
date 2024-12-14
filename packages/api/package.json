@@ -1,0 +1,34 @@
+{
+  "name": "@test/api",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "convex codegen",
+    "clean": "rm -rf .turbo node_modules",
+    "deploy": "convex deploy",
+    "dev": "pnpm with-env convex dev",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "setup": "convex dev --until-success",
+    "sort": "npx sort-package-json",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "prettier": "@test/prettier-config",
+  "dependencies": {
+    "@convex-dev/aggregate": "^0.1.18",
+    "convex": "^1.17.3",
+    "convex-helpers": "^0.1.67",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@test/eslint-config": "workspace:*",
+    "@test/prettier-config": "workspace:*",
+    "@test/tsconfig": "workspace:*",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "^9.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}
